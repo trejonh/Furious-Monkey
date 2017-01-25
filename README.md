@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/trejonh/Furious-Monkey.svg?branch=master)](https://travis-ci.org/trejonh/Furious-Monkey)
 
 
-A free sms api to send api messages to clients, without boundaries or costs.
+A free sms api to send api messages to clients, without boundaries or costs. Wrapping the [nodemailer](https://community.nodemailer.com/) to send plain-text sms messages to a wide range of mobile providers.
 
 ##Installation
 
@@ -10,7 +10,7 @@ A free sms api to send api messages to clients, without boundaries or costs.
 
 ##Testing
 
-`jasmine`
+Currently not tested besides manual tests with American providers, will keep working t find appropriate methods to provide proper testing.
 
 ###Examples
 
@@ -33,9 +33,13 @@ fm.sendText(phoneNumber,message,opts,function(err,info){
 `
 ####Run with following command
 
-`node username=your-email-username passowrd=your-email-password furious-monkey.js`
-i.e. `node username=furious-monkey password=password1234 furious-monkey.js`
+`node username=your-email-username passowrd=your-email-password host=email-provider furious-monkey.js`
+
+
+i.e. `node username=furious-monkey password=password1234 host=gmail.com furious-monkey.js`
 * Furious-Monkey uses [nodemailer](https://community.nodemailer.com/) as and smtp service to send emails to SMS Gateways, [nodemailer](https://community.nodemailer.com/) requires a personal email and password to setup transport object.
+
+* Verify with your email provider for daily sending limits
 
 ####Options
 options = {
@@ -113,3 +117,7 @@ _Australia_
 * Telstra
 
 _Complete list can be found lib/carriers.js_
+
+##Contributions
+
+If you would like to help make contributions or have questions/comments on usage please drop me an email via [trejon_house@yahoo.com](trejon_house@yahoo.com) with the subject line 'Furious-Monkey'.
