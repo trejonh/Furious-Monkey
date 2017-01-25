@@ -1,0 +1,23 @@
+{
+  "name": "furious-monkey",
+  "version": "1.0.0",
+  "description": "A npm to send sms messages to mobile phones.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trejonh/Furious-Monkey.git"
+  },
+  "keywords": [
+    "sms",
+    "texting"
+  ],
+  "author": "TreJon House",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trejonh/Furious-Monkey/issues"
+  },
+  "homepage": "https://github.com/trejonh/Furious-Monkey#readme"
+}
