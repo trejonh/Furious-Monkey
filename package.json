@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/trejonh/Furious-Monkey/issues"
   },
-  "homepage": "https://github.com/trejonh/Furious-Monkey#readme",
-  "devDependencies": {
-    "nodemailer": "^2.7.2"
-  }
+  "homepage": "https://github.com/trejonh/Furious-Monkey#readme"
 }

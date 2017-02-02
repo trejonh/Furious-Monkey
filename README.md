@@ -2,8 +2,9 @@
 [![Build Status](https://travis-ci.org/trejonh/Furious-Monkey.svg?branch=master)](https://travis-ci.org/trejonh/Furious-Monkey)
 
 
-A free sms api to send api messages to clients, without boundaries or costs. Wrapping the [nodemailer](https://community.nodemailer.com/) to send plain-text sms messages to a wide range of mobile providers.
-
+A free sms api to send api messages to clients, without boundaries or costs. Now using node and python to send plain-text sms messages to a wide range of mobile providers.
+##Requirements
+Python version 2.7.* is required for use
 ##Installation
 
 `npm install furious-monkey`
@@ -14,40 +15,56 @@ Currently not tested besides manual tests with American providers, will keep wor
 
 ###Examples
 
-`var fm = require('furious-monkey');
+~~~~
+var fm = require('furious-monkey');
 var opts = {
-  sender: 'foo@bar.com',
   subject: 'furious-monkey',
-  region: 'us'
+  region: 'us',
+  phoneNumber: 1234561234,
+  message: 'I'm a mad monkey'
 };
 
-var message = 'Hello I'm a mad monkey';
-var phoneNumber = 1234567890;
+fm.sendText(opts,function(info){
+	console.log(info);
+});
 
-fm.sendText(phoneNumber,message,opts,function(err,info){
-    if(err)
-      console.log(err);
-    else
-      console.log(info.response);
-  });
-`
+ ~~~~
 ####Run with following command
 
 `node username=your-email-username passowrd=your-email-password host=email-provider furious-monkey.js`
 
 
-i.e. `node username=furious-monkey password=password1234 host=gmail.com furious-monkey.js`
-* Furious-Monkey uses [nodemailer](https://community.nodemailer.com/) as and smtp service to send emails to SMS Gateways, [nodemailer](https://community.nodemailer.com/) requires a personal email and password to setup transport object.
+i.e. `node username=furious-monkey password=password1234 host=aol furious-monkey.js`
+
+**Note: Not recommended but host/username/password fields can be provided in options variable otherwise will be gathered from enviroment variables**
+* Those using Hotmail/Live/iCloud must provide full email address as their username i.e. `username=foobar@live.com`
 
 * Verify with your email provider for daily sending limits
 
+####Available Email Providers
+* Gmail - google
+* Yahoo - yahoo
+* Live - live
+* Outlook - outlook
+* Hotmail - hotmail
+* iCloud - icloud
+* AOL - aol
+
+_Complete list can be found lib/smtp_services.js_
+
 ####Options
+~~~~
 options = {
-  sender : type {String},
   subject : type {String},
-  region : type {String}
+  region : type {String},
+  message : type {String} - required,
+  phoneNumber: type {Number/String} - required,
+  host: type {String} - required,
+  username: type {String} - required,
+  passowrd: type {String} - required
 }
-#####Available Regions
+~~~~
+####Available Regions
 The default is set to US
 * US
 * EU
