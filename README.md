@@ -11,8 +11,11 @@ Python version 2.7.* is required for use
 
 ##Testing
 
-Currently not tested besides manual tests with American providers, will keep working t find appropriate methods to provide proper testing.
-
+~~~~
+cd lib
+username=username password=password to=reciever python furious_monkey_tests.py
+~~~~
+_Continuing to improve testing measures to ensure the reliability of Furious-Monkey_
 ###Examples
 
 ~~~~
