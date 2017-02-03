@@ -1,6 +1,6 @@
 {
   "name": "furious-monkey",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A npm to send sms messages to mobile phones.",
   "main": "index.js",
   "scripts": {
