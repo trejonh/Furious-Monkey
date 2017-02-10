@@ -7,4 +7,5 @@ env:
     - username=$username
     - password=$password
     - to = $to
-script: sh pytest.sh
+script: 
+    - bash pytest.sh
