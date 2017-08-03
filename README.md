@@ -1,22 +1,23 @@
 # Furious-Monkey
-[![Build Status](https://travis-ci.org/trejonh/Furious-Monkey.svg?branch=master)](https://travis-ci.org/trejonh/Furious-Monkey)
-
 
 A free sms api to send api messages to clients, without boundaries or costs. Now using node and python to send plain-text sms messages to a wide range of mobile providers.
-##Requirements
+## Requirements
 Python version 2.7.* is required for use
-##Installation
+## Installation
 
 `npm install furious-monkey`
 
-##Testing
+## Testing
 
 ~~~~
 cd lib
 username=username password=password to=reciever python furious_monkey_tests.py
 ~~~~
 _Continuing to improve testing measures to ensure the reliability of Furious-Monkey_
-###Examples
+Currently as the complexity of the module is very small, I do not see a need go with automated testing. With the
+ multitude of mobile providers and email services, testing the possible combinations would be futile. So raise an
+ issue you come across, and I will gladly look into it asap.
+### Examples
 
 ~~~~
 var fm = require('furious-monkey');
@@ -32,7 +33,7 @@ fm.sendText(opts,function(info){
 });
 
  ~~~~
-####Run with following command
+#### Run with following command
 
 `node username=your-email-username passowrd=your-email-password host=email-provider furious-monkey.js`
 
@@ -44,7 +45,7 @@ i.e. `node username=furious-monkey password=password1234 host=aol furious-monkey
 
 * Verify with your email provider for daily sending limits
 
-####Available Email Providers
+#### Available Email Providers
 * Gmail - google
 * Yahoo - yahoo
 * Live - live
@@ -55,7 +56,7 @@ i.e. `node username=furious-monkey password=password1234 host=aol furious-monkey
 
 _Complete list can be found lib/smtp_services.js_
 
-####Options
+#### Options
 ~~~~
 options = {
   subject : type {String},
@@ -67,7 +68,7 @@ options = {
   passowrd: type {String} - required
 }
 ~~~~
-####Available Regions
+#### Available Regions
 The default is set to US
 * US
 * EU
@@ -78,7 +79,7 @@ The default is set to US
 * MEX
 * CAN
 
-####Currently supported carriers
+#### Currently supported carriers
 _United States of America_
 * Alltel
 * AT & T
@@ -138,6 +139,11 @@ _Australia_
 
 _Complete list can be found lib/carriers.js_
 
-##Contributions
+## Limitations
+_Known_
+* T-Mobile - if the message isn't sent from the same server as the provided email provider, then message is marked as spam and never goes through
+* Requires the use of a personally email provider in an effort to keep it lightweight with little dependencies
+
+## Contributions
 
 If you would like to help make contributions or have questions/comments on usage please drop me an email via [trejon_house@yahoo.com](trejon_house@yahoo.com) with the subject line 'Furious-Monkey'.
