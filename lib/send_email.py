@@ -5,11 +5,11 @@ import smtplib, sys, json
 
 def send_email(email_data):
 	try:
-		message = "From: <Furious-Monkey>nonreply@foo.com\n"+"To: "+email_data["recipients"]+"\nSubject: "+email_data["subject"]+"\n"+email_data["message"]+"\n"
+		message = "From: <Furious-Monkey>nonreply@foo.com\n"+"To: "+email_data["recipients"]+"\nSubject: "+email_data["subject"]+"\n\n"+email_data["message"]+"\n"
 		smtpObj = smtplib.SMTP(email_data["smtp"]["server"],email_data["smtp"]["port"])
 		smtpObj.starttls()
 		smtpObj.login(email_data["username"],email_data["password"])
-		smtpObj.sendmail('nonreply@foo.com', email_data["recipientArray"], message)         
+		smtpObj.sendmail('nonreply@foo.com', email_data["recipientArray"], message)
 		print "Successfully sent text"
 		smtpObj.quit()
 	except KeyError, kex:
